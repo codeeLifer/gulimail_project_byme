@@ -19,6 +19,10 @@
         <module>gulimail-order</module>
         <module>gulimail-product</module>
         <module>gulimail-ware</module>
+        <module>renren-generator</module>
+        <module>renren-fast</module>
+        <module>gulimail-common</module>
+        <module>gulimail-common</module>
     </modules>
 
 
