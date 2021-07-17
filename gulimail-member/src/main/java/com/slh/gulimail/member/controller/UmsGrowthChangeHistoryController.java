@@ -3,6 +3,7 @@ package com.slh.gulimail.member.controller;
 import java.util.Arrays;
 import java.util.Map;
 
+import com.slh.gulimail.member.fegin.FeginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -30,6 +31,9 @@ public class UmsGrowthChangeHistoryController {
     @Autowired
     private UmsGrowthChangeHistoryService umsGrowthChangeHistoryService;
 
+    @Autowired
+    private FeginService feginService;
+
     /**
      * 列表
      */
@@ -38,6 +42,11 @@ public class UmsGrowthChangeHistoryController {
         PageUtils page = umsGrowthChangeHistoryService.queryPage(params);
 
         return R.ok().put("page", page);
+    }
+
+    @RequestMapping("/coupon/list")
+    public R testFegin(){
+        return feginService.testFegin();
     }
 
 
