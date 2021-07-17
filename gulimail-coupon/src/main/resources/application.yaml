@@ -1,0 +1,35 @@
+spring:
+  datasource:
+    username: root
+    password: root
+    url: jdbc:mysql://192.168.175.130:3306/gulimail_sms?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+
+  application:
+    name: gulimail-coupon
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+
+#对外暴漏所有端口 方便被springcloud 组件所监控，注意用到这个需要添加 spring acuator依赖包
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+      discovery:
+        enabled: true
+
+
+
+#配置mybatis-plus自增主键
+mybatis-plus:
+  global-config:
+    db-config:
+      id-type: auto
+
+server:
+  port: 7000
+
